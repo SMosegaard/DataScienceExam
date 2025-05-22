@@ -1,0 +1,5 @@
+context_length,rope_scaling,MSE,dataset,test_size,horizon
+32,True,170.32232421875,carbon,large,50
+32,True,8.190298461914063,carbon,small,5
+64,True,10.70067138671875,weather,large,50
+128,False,1.1714865684509277,weather,small,5
