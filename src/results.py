@@ -2,7 +2,7 @@ import pandas as pd
 import matplotlib.dates as mdates
 import matplotlib.pyplot as plt
 
-model_list = ["arima", "lagllama"]
+model_list = ["arima", "lagllama", "svr"]
 metrics = ["mae", "rmse", "smape"]
 group = ["dataset", "horizon"]
 
@@ -32,9 +32,10 @@ def main():
             train = pd.read_csv(f"../data/train/{dataset}_train.csv")
             test = pd.read_csv(f"../data/test/{dataset}_test_{test_size}.csv")
 
-            # Forecasted values:
+           # Forecasted values:
             forecast_arima = pd.read_csv(f"../out/arima_{horizon}_{dataset}.csv")
-            forecast_lagllama = pd.read_csv(f"../out/lagllama_{horizon}_{dataset}_NEW.csv")
+            forecast_svr = pd.read_csv(f"../out/svr_{horizon}_{dataset}.csv")
+            forecast_lagllama = pd.read_csv(f"../out/lagllama_{horizon}_{dataset}.csv")
 
             if dataset == "weather":
                 actual_y_train, actual_y_test = train["temperature"], test["temperature"].iloc[:horizon]
@@ -50,6 +51,7 @@ def main():
             dates = pd.concat([train["date"], test["date"].iloc[:horizon]]).reset_index(drop = True)
 
             forecast_arima = forecast_arima["0"].iloc[:horizon].reset_index(drop = True)
+            forecast_svr = forecast_svr["0"].iloc[:horizon].reset_index(drop = True)
             forecast_lagllama = forecast_lagllama["0"].iloc[:horizon].reset_index(drop = True)
             forecast_dates = test["date"].iloc[:horizon].reset_index(drop = True)
 
@@ -57,6 +59,7 @@ def main():
             fig, ax = plt.subplots(figsize = (14, 6))
             ax.plot(dates, actual_y, label = "True", color = "seagreen")
             ax.plot(forecast_dates, forecast_arima, label = "ARIMA", color = "palevioletred")
+            ax.plot(forecast_dates, forecast_svr, label = "SVR", color = "goldenrod")
             ax.plot(forecast_dates, forecast_lagllama, label = "LagLlama", color = "steelblue")
 
             ax.xaxis.set_major_locator(mdates.AutoDateLocator())
