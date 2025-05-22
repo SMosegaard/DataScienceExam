@@ -1,0 +1,26 @@
+Datetime (UTC),Country,Zone name,Zone id,Carbon_intensity,Carbon intensity gCO₂eq/kWh (Life cycle),Carbon-free energy percentage (CFE%),Renewable energy percentage (RE%),Data source,Data estimated,Data estimation method,Date
+2024-11-01 06:00:00,Denmark,Denmark,DK,25.26,45.08,95.81,91.96,entsoe.eu,False,,2024-11-01 06:00:00
+2024-11-01 07:00:00,Denmark,Denmark,DK,22.46,42.18,96.2,91.71,entsoe.eu,False,,2024-11-01 07:00:00
+2024-11-01 08:00:00,Denmark,Denmark,DK,20.88,40.75,96.43,91.06,entsoe.eu,False,,2024-11-01 08:00:00
+2024-11-01 09:00:00,Denmark,Denmark,DK,19.89,40.2,96.57,91.06,entsoe.eu,False,,2024-11-01 09:00:00
+2024-11-01 10:00:00,Denmark,Denmark,DK,21.6,42.26,96.42,90.69,entsoe.eu,False,,2024-11-01 10:00:00
+2024-11-01 11:00:00,Denmark,Denmark,DK,23.05,43.66,96.26,90.84,entsoe.eu,False,,2024-11-01 11:00:00
+2024-11-01 12:00:00,Denmark,Denmark,DK,20.48,40.9,96.57,90.8,entsoe.eu,False,,2024-11-01 12:00:00
+2024-11-01 13:00:00,Denmark,Denmark,DK,19.3,39.24,96.68,90.74,entsoe.eu,False,,2024-11-01 13:00:00
+2024-11-01 14:00:00,Denmark,Denmark,DK,19.1,38.66,96.7,90.87,entsoe.eu,False,,2024-11-01 14:00:00
+2024-11-01 15:00:00,Denmark,Denmark,DK,21.06,40.51,96.4,90.93,entsoe.eu,False,,2024-11-01 15:00:00
+2024-11-01 16:00:00,Denmark,Denmark,DK,24.47,44.74,95.79,90.48,entsoe.eu,False,,2024-11-01 16:00:00
+2024-11-01 17:00:00,Denmark,Denmark,DK,29.64,50.84,94.9,89.48,entsoe.eu,False,,2024-11-01 17:00:00
+2024-11-01 18:00:00,Denmark,Denmark,DK,32.08,53.72,94.47,88.79,entsoe.eu,False,,2024-11-01 18:00:00
+2024-11-01 19:00:00,Denmark,Denmark,DK,30.74,52.67,94.65,88.34,entsoe.eu,False,,2024-11-01 19:00:00
+2024-11-01 20:00:00,Denmark,Denmark,DK,28.37,49.79,95.09,87.89,entsoe.eu,False,,2024-11-01 20:00:00
+2024-11-01 21:00:00,Denmark,Denmark,DK,25.27,46.64,95.65,88.02,entsoe.eu,False,,2024-11-01 21:00:00
+2024-11-01 22:00:00,Denmark,Denmark,DK,27.67,51.75,95.28,87.52,entsoe.eu,False,,2024-11-01 22:00:00
+2024-11-01 23:00:00,Denmark,Denmark,DK,28.79,55.82,94.88,87.28,entsoe.eu,False,,2024-11-01 23:00:00
+2024-11-02 00:00:00,Denmark,Denmark,DK,32.22,62.73,94.41,85.5,entsoe.eu,False,,2024-11-02 00:00:00
+2024-11-02 01:00:00,Denmark,Denmark,DK,36.27,71.04,93.55,84.01,entsoe.eu,False,,2024-11-02 01:00:00
+2024-11-02 02:00:00,Denmark,Denmark,DK,44.96,83.47,91.93,82.87,entsoe.eu,False,,2024-11-02 02:00:00
+2024-11-02 03:00:00,Denmark,Denmark,DK,49.26,92.14,91.24,81.58,entsoe.eu,False,,2024-11-02 03:00:00
+2024-11-02 04:00:00,Denmark,Denmark,DK,72.88,120.86,86.92,76.95,entsoe.eu,False,,2024-11-02 04:00:00
+2024-11-02 05:00:00,Denmark,Denmark,DK,93.2,143.69,83.57,72.84,entsoe.eu,False,,2024-11-02 05:00:00
+2024-11-02 06:00:00,Denmark,Denmark,DK,96.03,147.8,83.53,72.34,entsoe.eu,False,,2024-11-02 06:00:00
