@@ -1,0 +1,5 @@
+order,seasonal_order,with_intercept,mse,dataset,test_size,horizon
+"(1, 1, 1)","(2, 0, 0, 24)",True,0.1343714843200858,weather,small,5
+"(0, 1, 0)","(2, 0, 1, 24)",True,13.555616192708882,weather,large,50
+"(2, 1, 1)","(2, 0, 0, 24)",True,3.2224783600858573,carbon,small,5
+"(0, 1, 0)","(2, 0, 0, 24)",True,89.35133996118171,carbon,large,50
