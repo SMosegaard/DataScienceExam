@@ -129,6 +129,8 @@ celerybeat.pid
 
 # Environments
 .env
+virt_env
+/virt_env
 .venv
 env/
 venv/
@@ -172,3 +174,9 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+
+# Lag-Llama repo
+lag-llama
+Lag-Llama
+Lag-Llama/lag-llama
