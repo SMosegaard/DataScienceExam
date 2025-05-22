@@ -17,7 +17,7 @@ from lag_llama.gluon.estimator import LagLlamaEstimator
 
 def prep_gluonts_df(df, freq = "H"):
     start_index = df["date"].min()
-    data = [{FieldName.START:  start_index,
+    data = [{FieldName.START:  pd.Timestamp(start_index),
              FieldName.TARGET:  df["y"].values,}]
     return ListDataset(data, freq = freq)
 
