@@ -59,7 +59,6 @@ def main():
             ax.plot(forecast_dates, forecast_arima, label = "ARIMA", color = "palevioletred")
             ax.plot(forecast_dates, forecast_lagllama, label = "LagLlama", color = "steelblue")
 
-            ax.legend(loc = "upper right")
             ax.xaxis.set_major_locator(mdates.AutoDateLocator())
             ax.xaxis.set_major_formatter(mdates.DateFormatter('%Y-%m-%d'))
 
@@ -74,7 +73,7 @@ def main():
             
             plt.xticks(rotation = 45)
             plt.tight_layout()
-            plt.legend()
+            plt.legend(loc = "upper right")
             plt.savefig(f"../plots/actual_vs_forecast_{dataset}_{horizon}.png")
             plt.show()
 
