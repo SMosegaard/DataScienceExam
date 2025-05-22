@@ -75,7 +75,6 @@ def main():
             if args.model == "lagllama":
                 
                 rope, c_len = extract_hyperparams_lagllama(hyperparams, horizon)
-                rope, c_len = convert_tuple(rope), convert_tuple(c_len)
                 train_split, test_split = rolling_origin_eval_prep(df_train, df_test, horizon)
 
                 forecast_df = pd.DataFrame()
@@ -93,8 +92,6 @@ def main():
                     prediction_m = predicted_series[0].mean
                     i_forecast = np.concatenate([np.repeat(np.nan, i), prediction_m, np.repeat(np.nan, len(df_test) - i - horizon)])
                     forecast_df[f"{i}"] = i_forecast
-                    
-                    mae = metrics["abs_error"] * (metrics["abs_target_mean"] / metrics["abs_target_sum"])
 
                     metadata_dict = {"dataset": dataset,
                                     "test_size": test_size,
@@ -102,7 +99,7 @@ def main():
                                     "context_length": c_len,
                                     "rope_scaling": rope,
                                     "iter": i,
-                                    "mae": round(mae, 3),
+                                    "mae": round(metrics["abs_error"], 3),
                                     "mse": round(metrics["MSE"], 3),
                                     "rmse": round(metrics["RMSE"], 3),
                                     "smape": round(metrics["sMAPE"], 3)}
