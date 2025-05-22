@@ -1,4 +1,4 @@
-Datetime (UTC),Country,Zone name,Zone id,Carbon_intensity,Carbon intensity gCO₂eq/kWh (Life cycle),Carbon-free energy percentage (CFE%),Renewable energy percentage (RE%),Data source,Data estimated,Data estimation method,Date
+Datetime (UTC),Country,Zone name,Zone id,carbon_intensity,Carbon intensity gCO₂eq/kWh (Life cycle),Carbon-free energy percentage (CFE%),Renewable energy percentage (RE%),Data source,Data estimated,Data estimation method,date
 2024-10-01 00:00:00,Denmark,Denmark,DK,49.19,84.23,93.27,85.68,entsoe.eu,False,,2024-10-01 00:00:00
 2024-10-01 01:00:00,Denmark,Denmark,DK,49.38,84.9,93.17,84.98,entsoe.eu,False,,2024-10-01 01:00:00
 2024-10-01 02:00:00,Denmark,Denmark,DK,47.2,81.59,93.45,85.31,entsoe.eu,False,,2024-10-01 02:00:00
