@@ -7,7 +7,7 @@ from gluonts.evaluation import Evaluator
 from arima_utils import parser, data_prep, extract_hyperparams_arima, rolling_origin_eval_prep, evaluate, convert_tuple
 from lagllama_utils import extract_hyperparams_lagllama, prep_gluonts_df, lagllama_estimator 
 
-os.chdir("../..") # navigating out of the lag-llama repo. Current wd is now 'DataScience_Exam/src/' 
+os.chdir("../..") # navigating out of the lag-llama repo. Current wd is now 'DataScienceExam/src/' 
 
 
 dataset_label = ["weather", "carbon"]

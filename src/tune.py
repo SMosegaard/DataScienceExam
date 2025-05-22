@@ -6,7 +6,7 @@ from gluonts.evaluation import Evaluator
 from arima_utils import data_prep, eval_arima_parms, parser
 from lagllama_utils import prep_gluonts_df, lagllama_estimator 
 
-os.chdir("../..") # navigating out of the lag-llama repo. Current wd is now 'DataScience_Exam/src/' 
+os.chdir("../..") # navigating out of the lag-llama repo. Current wd is now 'DataScienceExam/src/' 
 
 dataset_label = ["weather", "carbon"]
 test_size_label = ["small", "large"]
