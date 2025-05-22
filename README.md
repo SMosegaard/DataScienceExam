@@ -75,3 +75,4 @@ The project is structured to support a full forecasting workflow, including data
 For transparency, the pipelines for tuning the hyperparameters for the models are based on the following tutorials:
 - https://www.ibm.com/think/tutorials/lag-llama
 - https://machinelearningmastery.com/grid-search-arima-hyperparameters-with-python/ 
+- https://www.geeksforgeeks.org/time-series-forecasting-with-support-vector-regression/
