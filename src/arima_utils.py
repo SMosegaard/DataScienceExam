@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 from pmdarima import auto_arima
+from statsmodels.tsa.arima.model import ARIMA
 
 all_metrics = []
 
@@ -34,6 +35,13 @@ def eval_arima_parms(data, df_train, horizon, test):
     all_metrics.append(model_params)
     
     return all_metrics
+
+
+def test_arima(curr_train, curr_test, order, seasonal_order, horizon):
+    model = ARIMA(curr_train["y"], order = order, seasonal_order = seasonal_order).fit()
+    forecast = model.forecast(steps = horizon)
+    actual = curr_test["y"].values
+    return forecast, actual
 
 
 def extract_hyperparams_arima(hyperparams, horizon):
