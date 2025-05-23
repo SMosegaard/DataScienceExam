@@ -43,7 +43,7 @@ def main():
                 y_train = df_train["y"].values
                 for window in window_size:
                     X_train, y_target = svr_prep(y_train, window)
-                    all_metrics = svr_tune(X_train, y_target)
+                    all_metrics = svr_tune(X_train, y_target, dataset, test_size, horizon, window)
 
             elif args.model == "lagllama":
                                     
