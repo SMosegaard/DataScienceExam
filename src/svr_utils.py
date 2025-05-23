@@ -24,7 +24,7 @@ def svr_prep(y_train, window_size):
     return X_train, y_target
 
 
-def svr_tune(X_train, y_train):
+def svr_tune(X_train, y_train, dataset, test_size, horizon, window):
 
     params_of_interest = {"C": [0.1, 1, 10, 100],
                         "epsilon": [0.01, 0.1, 0.5, 1],
