@@ -5,7 +5,7 @@ import pandas as pd
 from gluonts.dataset.common import ListDataset
 from gluonts.dataset.field_names import FieldName
 
-from gluonts.evaluation import make_evaluation_predictions
+from gluonts.evaluation import Evaluator, make_evaluation_predictions
 from gluonts.torch.distributions.studentT import StudentTOutput
 from gluonts.torch.modules.loss import NegativeLogLikelihood
 torch.serialization.add_safe_globals([NegativeLogLikelihood])
@@ -13,6 +13,8 @@ torch.serialization.add_safe_globals([StudentTOutput, NegativeLogLikelihood])
 
 os.chdir("lag-llama/lag-llama") # navigating into the lag-llama repo
 from lag_llama.gluon.estimator import LagLlamaEstimator
+
+all_metrics = []
 
 
 def prep_gluonts_df(df, freq = "H"):
@@ -54,6 +56,19 @@ def lagllama_estimator(dataset,
                                                                             num_samples = num_samples)
 
     return list(forecast_iterator), list(actual_series_iterator)
+
+
+def eval_lagllama(predicted_series, actual_series, dataset, test_size, horizon, c_len, rope):
+    evaluator = Evaluator()
+    metrics, _ = evaluator(iter(actual_series), iter(predicted_series))
+    params_dict = {"dataset": dataset,
+                    "test_size": test_size,
+                    "horizon": horizon,
+                    "context_length": c_len,
+                    "rope_scaling": rope}
+    metrics.update(params_dict)
+    all_metrics.append(metrics)
+    return all_metrics
 
 
 def extract_hyperparams_lagllama(hyperparams, horizon):
