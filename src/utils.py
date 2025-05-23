@@ -16,7 +16,7 @@ def parser():
                         "-m",
                         required = True,
                         choices = ["arima", "svr", "lagllama"], # add more
-                        help = "Specify which model to tune")
+                        help = "Specify which model to tune or test")
       
     args = parser.parse_args()
     args.model = args.model.lower()
