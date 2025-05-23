@@ -57,10 +57,12 @@ def main():
 
     if args.model == "arima":
         metrics_df.to_csv("../out/arima_hyperparameters.csv", index = False)
-    elif args.model = "svr":
+
+    elif args.model == "svr":
         metrics_df["mse"] = -metrics_df["best_score_neg_mse"]
         best_params_df = metrics_df.loc[metrics_df.groupby(["dataset", "horizon"])["mse"].idxmin()].reset_index(drop = True)
         best_params_df.to_csv("../out/svr_hyperparameters.csv", index = False)
+    
     elif args.model == "lagllama":
         best_params = metrics_df.loc[metrics_df.groupby(["dataset", "test_size", "horizon"])["MSE"].idxmin()]
         best_params.to_csv("../out/lagllama_hyperparameters.csv", index = False)
