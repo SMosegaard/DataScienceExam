@@ -1,0 +1,5 @@
+dataset,test_size,horizon,window_size,C,epsilon,gamma,best_score_neg_mse,mse
+carbon,small,5,5,100,0.01,scale,-203.886,203.886
+carbon,large,50,5,100,0.01,scale,-203.886,203.886
+weather,small,5,3,10,0.01,scale,-2.732,2.732
+weather,large,50,3,10,0.01,scale,-2.732,2.732
