@@ -1,11 +1,11 @@
 import os
 import pandas as pd
 import numpy as np
-from statsmodels.tsa.arima.model import ARIMA
 from gluonts.evaluation import Evaluator
 
-from arima_utils import parser, data_prep, extract_hyperparams_arima, rolling_origin_eval_prep, evaluate, convert_tuple
-from lagllama_utils import extract_hyperparams_lagllama, prep_gluonts_df, lagllama_estimator 
+from utils import parser, data_prep, rolling_origin_eval_prep, convert_tuple, evaluate
+from arima_utils import extract_hyperparams_arima, test_arima
+from lagllama_utils import extract_hyperparams_lagllama, prep_gluonts_df, lagllama_estimator
 
 os.chdir("../..") # navigating out of the lag-llama repo. Current wd is now 'DataScienceExam/src/' 
 
@@ -47,10 +47,7 @@ def main():
                 for i, (curr_train, curr_test) in enumerate(zip(train_split, test_split)):
                     
                     curr_train.reset_index(drop = True)
-                    model = ARIMA(curr_train["y"], order = order, seasonal_order = seasonal_order).fit()
-
-                    forecast = model.forecast(steps = horizon)
-                    actual = curr_test["y"].values
+                    forecast, actual = test_arima(curr_train, curr_test, order, seasonal_order, horizon)
 
                     i_forecast = np.concatenate([np.repeat(np.nan, i), forecast, np.repeat(np.nan, len(df_test) - i - horizon)])
                     forecast_df[f"{i}"] = i_forecast
