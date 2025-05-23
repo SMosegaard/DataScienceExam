@@ -15,7 +15,7 @@ def parser():
     parser.add_argument("--model",
                         "-m",
                         required = True,
-                        choices = ["arima", "lagllama"], # add more
+                        choices = ["arima", "svr", "lagllama"], # add more
                         help = "Specify which model to tune")
       
     args = parser.parse_args()
@@ -24,6 +24,10 @@ def parser():
 
 
 def data_prep(test, dataset):
+    """
+    The function prepares the data. Specifically, it loads the train and test data from the data
+    folder and renames the columns of interest depending on the current dataset.
+    """
     df_train = pd.read_csv(f"../data/train/{dataset}_train.csv")
     df_test = pd.read_csv(f"../data/test/{dataset}_test_{test}.csv")
 
@@ -44,24 +48,40 @@ def convert_tuple(a):
 
 
 def rolling_origin_eval_prep(df_train, df_test, horizon):
-    train_split, test_split = [], [] # initialize empty lists to store each train and test split
+    """
+    The function prepares the rolling-origin evaluation strategy. It starts by
+    initializing empty lists to store each train and test split. Then, the function
+    iteratievly expands the training data by including more of the test data, and
+    creates a corresponding test window from i+ horizon. This means, that
+    it selects the new "horizon step" of the test data starting from i.
+    The function returns lists of train and test splits for each evaluation step. 
+    """
+    train_split, test_split = [], []
     for i in range(0, len(df_test) - horizon + 1):
         curr_train = pd.concat([df_train, df_test.iloc[:i]], axis = 0)
-        curr_test = df_test.iloc[i:i + horizon] # create a test windos from i to i+horizon, meaning select the next "horizon step" of test data starting from i
+        curr_test = df_test.iloc[i:i + horizon]
         train_split.append(curr_train)
         test_split.append(curr_test)
     return train_split, test_split
 
 
 def cal_smape(actual, forecast):
-    actual, forecast = np.array(actual), np.array(forecast) # convert actual and forecasted values to numpy arrays
-    denominator = (np.abs(actual) + np.abs(forecast)) / 2
-    difference = np.abs(actual - forecast) / denominator
-    difference = np.where(denominator == 0, 0, difference) # to avoid dividing by 0 or NaN
+    """
+    This function calculates the sMAPE between the actual and forecasted values.
+    The function converts the actual and forecasted values to numpy arrays, computes the absolute
+    error for each pair, and returns the average error as a percentage. 
+    """
+    actual, forecast = np.array(actual), np.array(forecast)
+    denominator = (np.abs(forecast) + np.abs(actual)) / 2
+    difference = np.abs(forecast - actual) / denominator
     return 100 * np.mean(difference)
 
 
 def evaluate(actual, forecast):
+    """
+    This function calculates MAE, MSE, RMSE, and sMAPE based
+    on actual and forecasted values
+    """
     mae = round(mean_absolute_error(actual, forecast), 3)
     mse = round(mean_squared_error(actual, forecast), 3)
     rmse = round(np.sqrt(mse), 3)
