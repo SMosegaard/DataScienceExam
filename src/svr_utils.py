@@ -46,3 +46,14 @@ def svr_tune(X_train, y_train, dataset, test_size, horizon, window):
                     "best_score_neg_mse": round(grid.best_score_, 3)}
     all_metrics.append(model_params)
     return all_metrics
+
+
+def extract_hyperparams_svr(hyperparams, horizon):
+    """ Extract the hyperparameter from the df and given horizon """
+    mask = hyperparams["horizon"] == horizon
+    window_size = hyperparams.loc[mask, "window_size"]
+    C = hyperparams.loc[mask, "C"]
+    epsilon = hyperparams.loc[mask, "epsilon"]
+    gamma = hyperparams.loc[mask, "gamma"]
+    window_size, C, epsilon, gamma = window_size.values[0], C.values[0], epsilon.values[0], gamma.values[0]
+    return window_size, C, epsilon, gamma
