@@ -1,10 +1,10 @@
 import os
 import pandas as pd
 import torch
-from gluonts.evaluation import Evaluator
 
-from arima_utils import data_prep, eval_arima_parms, parser
-from lagllama_utils import prep_gluonts_df, lagllama_estimator 
+from utils import parser, data_prep
+from arima_utils import eval_arima_parms
+from lagllama_utils import prep_gluonts_df, lagllama_estimator, eval_lagllama
 
 os.chdir("../..") # navigating out of the lag-llama repo. Current wd is now 'DataScienceExam/src/' 
 
@@ -47,18 +47,7 @@ def main():
 
                         print(f"Context length {c_len} and rope scaling {rope}\n")                        
                         predicted_series, actual_series = lagllama_estimator(gluonts_df, horizon, torch.device('cpu'), c_len, rope)
-
-                        evaluator = Evaluator()
-                        metrics, _ = evaluator(iter(actual_series), iter(predicted_series))
-
-                        params_dict = {"dataset": dataset,
-                                        "test_size": test_size,
-                                        "horizon": horizon,
-                                        "context_length": c_len,
-                                        "rope_scaling": rope}
-                        
-                        metrics.update(params_dict)
-                        all_metrics.append(metrics)
+                        all_metrics = eval_lagllama(predicted_series, actual_series, dataset, test_size, horizon, c_len, rope)
 
     metrics_df = pd.DataFrame(all_metrics)
 
