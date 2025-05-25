@@ -79,8 +79,10 @@ The project is structured to support a full forecasting workflow, including data
 └── setup.sh                       # Script for setting up the project environment
 ```
 
+## ⚠️ Notes
+Python version: This project was developed and tested using Python version 3.10.0.
 
-## References
+## 📍 References
 For transparency, the hyperparameter tuning strategies are adapted from the following tutorials:
 - [Lag-Llama tutorial](https://www.ibm.com/think/tutorials/lag-llama)
 - [SVR tutorial 1](https://www.geeksforgeeks.org/time-series-forecasting-with-support-vector-regression/), [SVR tutorial 2](https://www.geeksforgeeks.org/svm-hyperparameter-tuning-using-gridsearchcv-ml/)
