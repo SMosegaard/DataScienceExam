@@ -18,7 +18,7 @@ $ source setup.sh
 ``` 
 You are now working within the virtual environment!
 
-Next, navigate into the scr/ folder and execute the bash script for the Lag-Llama model, that will clone the Lag-Llama repo inside the folder:
+Next, navigate into the ```scr/``` folder and execute the bash script for the Lag-Llama model, that will clone the Lag-Llama repo inside the folder:
 
 ```python
 $ cd src
@@ -26,9 +26,7 @@ $ source lagllama_setup.sh
 ```
 
 ## 👩‍💻 Usage
-Once the project has been set up, you can tune the hyperparameters for each model and test their performance. To do so, use the following commands and specify which model (--model / -m) to evaluate.
-
-There are currently three models available models: ARIMA, SVR, and Lag-Llama. Model names are not case-sensitive, so whether type the options with capital letters or not will not affect the executions of the scripts.
+Once the project has been set up, you can tune the hyperparameters for each model and test their performance. To do so, use the following commands and specify which model (--model / -m) to evaluate. There are currently three models available models: ARIMA, SVR, and Lag-Llama. Model names are not case-sensitive, so whether you type the options with capital letters or not will not affect the executions of the scripts.
 
 ```python
 $ python tune.py -m {arima/svr/lagllama}
