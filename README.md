@@ -27,7 +27,9 @@ $ source lagllama_setup.sh
 ```
 
 ### 4. Download the Data from Hugging Face
-The datasets used in this project is not created nor owned by me and therefore cannot be shared directly in this public repository. However, you can download the preprocessed datasets from Hugging Face. To access the data, please provide the token (--token / -t) provided in the exam paper and run the following command:
+The datasets used in this project is not created nor owned by me and therefore cannot be shared directly in this public repository. However, you can download the preprocessed datasets from Hugging Face.
+
+To access the data, please provide the token (--token / -t) provided in the exam paper and run the following command:
 ```python
 $ python read_data.py -t {private_token_provided_in_the_exam_paper}
 ```
@@ -65,7 +67,7 @@ The project is structured to support a full forecasting workflow, including data
 
 ```
 .
-├── data/                          # Contains the datasets and a notebook for data visualisations
+├── data/                          # Contains the datasets (when downloaded from Hugging Face) and a notebook for data visualisations
     ├── train                      # Training data
     ├── test                       # Testing data
     └── data_visualisations.ipynb  # Notebook for visualizing the data
