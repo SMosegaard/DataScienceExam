@@ -18,22 +18,19 @@ Navigate into the repository in your terminal:
 $ cd DataScienceExam
 ``` 
 
-### 3. Set Up the Virtual Environment
-Run the ```setup.sh``` script to create a virtual environment and install all required dependencies specified in ```requirements.txt```:
+### 3. Set Up the Virtual Environment and Download the Data from Hugging Face
+To get started, run the ```setup.sh``` script. The script will create a virtual environment, install all required dependencies specified in ```requirements.txt```, and download the datasets from Hugging Face.
+
+*Note: The datasets used in this project are not created nor owned by me and therefore cannot be shared directly in this public repository. Thus, you will need to download the datasets (both the raw data and the preprocessed train/test splits) from Hugging Face.*
+
+To access the data, please provide the token (--token / -t) provided in the exam paper. Run the following command:
+
 ```python
-$ source setup.sh
+$ source setup.sh -t {private_token_provided_in_the_exam_paper}
 ``` 
-You are now working within the virtual environment!
+Once the script completes, you will be working within the virtual environment and the datasets will be stored in the ```data/``` folder.
 
-### 4. Download the Data from Hugging Face
-The datasets used in this project are not created nor owned by me and therefore cannot be shared directly in this public repository. However, you can download the datasets (both the raw data and the preprocessed train/test splits) from Hugging Face.
-
-To access the data, please provide the token (--token / -t) provided in the exam paper and run the following command:
-```python
-$ python src/read_data.py -t {private_token_provided_in_the_exam_paper}
-```
-
-### 5. Prepare the Lag-Llama Environment 
+### 4. Prepare the Lag-Llama Environment 
 Finally, navigate into the ```scr/``` folder and execute the bash script for the Lag-Llama model, that will clone the Lag-Llama documentation repository inside the folder:
 
 ```python
