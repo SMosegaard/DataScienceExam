@@ -2,27 +2,34 @@
 
 This repository contains the code for my exam project in the course "Data Science, Prediction, and Forecasting" as a part of my Master in Cognitive Science.
 
-## 🔧 Setup and installation guide
+## 🔧 Setup and Installation Guide
 
 Follow these steps to set up the project:
 
-### 1.  Clone the repository
+### 1.  Clone the Repository
 Start by cloning the repository to your local machine using the following command:
 ```python
 $ git clone "https://github.com/SMosegaard/DataScienceExam.git"
 ```
-### 2. Set up the virtual environment
+### 2. Set Up the Virtual Environment
 Run the ```setup.sh``` script to create a virtual environment and install all required dependencies specified in ```requirements.txt```:
 ```python
 $ source setup.sh
 ``` 
 You are now working within the virtual environment!
 
+### 3. Prepare the Lag-Llama Model 
 Next, navigate into the ```scr/``` folder and execute the bash script for the Lag-Llama model, that will clone the Lag-Llama repo inside the folder:
 
 ```python
 $ cd src
 $ source lagllama_setup.sh
+```
+
+### 4. Download the Data from Hugging Face
+The datasets used in this project is not created nor owned by me and therefore cannot be shared directly in this public repository. However, you can download the preprocessed datasets from Hugging Face. To access the data, please provide the token (--token / -t) provided in the exam paper and run the following command:
+```python
+$ python read_data.py -t {private_token_provided_in_the_exam_paper}
 ```
 
 ## 👩‍💻 Usage
