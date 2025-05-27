@@ -12,7 +12,7 @@ Start by cloning the repository to your local machine using the following comman
 $ git clone "https://github.com/SMosegaard/DataScienceExam.git"
 ```
 
-### 2. Navigate into Repository
+### 2. Navigate into the Repository
 Navigate into the repository in your terminal:
 ```python
 $ cd DataScienceExam
@@ -26,7 +26,7 @@ $ source setup.sh
 You are now working within the virtual environment!
 
 ### 4. Download the Data from Hugging Face
-The datasets used in this project is not created nor owned by me and therefore cannot be shared directly in this public repository. However, you can download the preprocessed datasets from Hugging Face.
+The datasets used in this project are not created nor owned by me and therefore cannot be shared directly in this public repository. However, you can download the datasets (both the raw data and the preprocessed train/test splits) from Hugging Face.
 
 To access the data, please provide the token (--token / -t) provided in the exam paper and run the following command:
 ```python
