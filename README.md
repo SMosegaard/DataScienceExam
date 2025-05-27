@@ -18,7 +18,7 @@ $ source setup.sh
 ``` 
 You are now working within the virtual environment!
 
-Next, navigate into the scr/ folder and execute the bash script for the Lag-Llama model, that will clone the Lag-Llama repo inside the folder:
+Next, navigate into the ```scr/``` folder and execute the bash script for the Lag-Llama model, that will clone the Lag-Llama repo inside the folder:
 
 ```python
 $ cd src
@@ -26,9 +26,7 @@ $ source lagllama_setup.sh
 ```
 
 ## 👩‍💻 Usage
-Once the project has been set up, you can tune the hyperparameters for each model and test their performance. To do so, use the following commands and specify which model (--model / -m) to evaluate.
-
-There are currently three models available models: ARIMA, SVR, and Lag-Llama. Model names are not case-sensitive, so whether type the options with capital letters or not will not affect the executions of the scripts.
+Once the project has been set up, you can tune the hyperparameters for each model and test their performance. To do so, use the following commands and specify which model (--model / -m) to evaluate. There are currently three models available models: ARIMA, SVR, and Lag-Llama. Model names are not case-sensitive, so whether you type the options with capital letters or not will not affect the executions of the scripts.
 
 ```python
 $ python tune.py -m {arima/svr/lagllama}
@@ -81,8 +79,10 @@ The project is structured to support a full forecasting workflow, including data
 └── setup.sh                       # Script for setting up the project environment
 ```
 
+## ⚠️ Notes
+Python version: This project was developed and tested using Python version 3.10.0.
 
-## References
+## 📍 References
 For transparency, the hyperparameter tuning strategies are adapted from the following tutorials:
 - [Lag-Llama tutorial](https://www.ibm.com/think/tutorials/lag-llama)
 - [SVR tutorial 1](https://www.geeksforgeeks.org/time-series-forecasting-with-support-vector-regression/), [SVR tutorial 2](https://www.geeksforgeeks.org/svm-hyperparameter-tuning-using-gridsearchcv-ml/)
