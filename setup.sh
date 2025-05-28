@@ -5,8 +5,8 @@ python -m venv virt_env
 source ./virt_env/bin/activate
 
 # Install requirements
-#pip install --upgrade pip
-#pip install -r requirements.txt
+pip install --upgrade pip
+pip install -r requirements.txt
 
 # Download data from Hugging Face
 python src/read_data.py "$@"
